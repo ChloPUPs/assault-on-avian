@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cs3ctxus8liwv"]
+
+[ext_resource type="Texture2D" uid="uid://cbudrl0yom1bh" path="res://entities/player/art/player-1.png" id="1_abrql"]
+[ext_resource type="Script" uid="uid://coo8rtxog60q7" path="res://entities/player/player.gd" id="1_sglur"]
+[ext_resource type="Texture2D" uid="uid://qlitjq56q0ic" path="res://entities/player/art/player-2.png" id="2_sglur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bls4j"]
+atlas = ExtResource("1_abrql")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkugw"]
+atlas = ExtResource("2_sglur")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hvgxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bls4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkugw")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
+radius = 6.0
+
+[node name="Player" type="Area2D" unique_id=1748242339]
+script = ExtResource("1_sglur")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1066314153]
+sprite_frames = SubResource("SpriteFrames_hvgxb")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1390515752]
+shape = SubResource("CircleShape2D_abrql")
