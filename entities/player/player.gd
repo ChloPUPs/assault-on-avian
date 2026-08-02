@@ -1,5 +1,7 @@
+@icon("res://entities/player/art/player-2.png")
 class_name Player
 extends Area2D
+# Maybe you could shoot in only one direction
 
 const SPEED: float = 1
 

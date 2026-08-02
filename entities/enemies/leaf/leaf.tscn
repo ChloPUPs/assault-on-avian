@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bqv1lq1q64o30"]
+
+[ext_resource type="Script" uid="uid://dajl70fdakdj" path="res://entities/enemies/leaf/scripts/leaf.gd" id="1_ab6nq"]
+[ext_resource type="Texture2D" uid="uid://bhicxya54e8bx" path="res://entities/enemies/leaf/art/leaf.png" id="2_1fpcg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkc3x"]
+atlas = ExtResource("2_1fpcg")
+region = Rect2(0, 0, 16, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwdoe"]
+atlas = ExtResource("2_1fpcg")
+region = Rect2(16, 0, 16, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyqpb"]
+atlas = ExtResource("2_1fpcg")
+region = Rect2(32, 0, 16, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejtad"]
+atlas = ExtResource("2_1fpcg")
+region = Rect2(48, 0, 16, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ab6nq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkc3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwdoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyqpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejtad")
+}],
+"loop": 2,
+"name": &"spin",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkc3x"]
+size = Vector2(8, 2)
+
+[node name="Leaf" type="Area2D" unique_id=72121875]
+script = ExtResource("1_ab6nq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1694643097]
+sprite_frames = SubResource("SpriteFrames_ab6nq")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.11804609
+offset = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1830014891]
+shape = SubResource("RectangleShape2D_vkc3x")
