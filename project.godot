@@ -28,8 +28,9 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://common/": "blue",
-"res://entities/enemies/": "green",
-"res://entities/player/": "pink"
+"res://entities/": "green",
+"res://entities/player/": "pink",
+"res://stages/": "red"
 }
 
 [input]

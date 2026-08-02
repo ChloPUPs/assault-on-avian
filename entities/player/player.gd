@@ -4,16 +4,18 @@ extends Area2D
 # Maybe you could shoot in only one direction
 # Shoot very fast
 
-const SPEED: float = 1
+const SPEED: float = 1.2
+const TILT_SPEED: float = 0.15
+const TILE_DISTANCE: float = 10.0
 
 var velocity := Vector2.ZERO
+var direction := Vector2.ZERO
 
 
 func _physics_process(_delta: float) -> void:
-	var direction: Vector2 = _get_direction()
+	direction = _get_direction()
 	velocity = direction * SPEED
-	# Tilt player.
-	rotation_degrees = lerp(rotation_degrees, 10.0 * direction.x, 0.1)
+	_animate_tilt()
 
 	position += velocity
 
@@ -22,3 +24,7 @@ func _get_direction() -> Vector2:
 	var x: float = Input.get_axis("move_left", "move_right")
 	var y: float = Input.get_axis("move_up", "move_down")
 	return Vector2(x, y).normalized()
+
+
+func _animate_tilt() -> void:
+	rotation_degrees = lerp(rotation_degrees, TILE_DISTANCE * direction.x, TILT_SPEED)

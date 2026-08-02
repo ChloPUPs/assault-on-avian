@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkc3x"]
-size = Vector2(8, 2)
+size = Vector2(12, 4)
 
 [node name="Leaf" type="Area2D" unique_id=72121875]
 script = ExtResource("1_ab6nq")
@@ -49,8 +49,15 @@ script = ExtResource("1_ab6nq")
 sprite_frames = SubResource("SpriteFrames_ab6nq")
 animation = &"spin"
 autoplay = "spin"
-frame_progress = 0.11804609
+frame_progress = 0.22129819
 offset = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1830014891]
 shape = SubResource("RectangleShape2D_vkc3x")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=490403863]
+position = Vector2(2, 0)
+rect = Rect2(-9, -3.5, 16, 7)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

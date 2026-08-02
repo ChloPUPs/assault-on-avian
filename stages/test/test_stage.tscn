@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dqvy7qoq7n0xy"]
+
+[ext_resource type="PackedScene" uid="uid://cs3ctxus8liwv" path="res://entities/player/player.tscn" id="1_2n42k"]
+[ext_resource type="PackedScene" uid="uid://bqv1lq1q64o30" path="res://entities/enemies/leaf/leaf.tscn" id="2_bipwh"]
+
+[node name="TestStage" type="Node2D" unique_id=389320265]
+
+[node name="Leaf" parent="." unique_id=72121875 instance=ExtResource("2_bipwh")]
+position = Vector2(363, 70)
+
+[node name="Player" parent="." unique_id=1748242339 instance=ExtResource("1_2n42k")]
