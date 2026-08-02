@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cfdua8pdc6xdp"]
+
+[ext_resource type="Texture2D" uid="uid://x5sfsfxijqm4" path="res://entities/projectiles/seed/art/seed.png" id="1_qpd5f"]
+[ext_resource type="Script" uid="uid://c67yx2nn1t5rh" path="res://entities/projectiles/seed/scripts/seed.gd" id="1_wtjkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtjkf"]
+size = Vector2(6, 2)
+
+[node name="Seed" type="Area2D" unique_id=1874349204]
+script = ExtResource("1_wtjkf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=367859715]
+texture = ExtResource("1_qpd5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=123101264]
+shape = SubResource("RectangleShape2D_wtjkf")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

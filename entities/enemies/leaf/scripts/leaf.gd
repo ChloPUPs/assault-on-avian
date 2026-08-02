@@ -1,5 +1,5 @@
 @icon("res://entities/enemies/leaf/art/leaf_icon.png")
-class_name Leaf
+class_name LeafEnemy
 extends Area2D
 
 const SPEED: float = 1

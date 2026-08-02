@@ -32,6 +32,9 @@ size = Vector2(8, 12)
 [node name="Player" type="Area2D" unique_id=1748242339]
 script = ExtResource("1_sglur")
 
+[node name="SeedContainer" type="Node2D" parent="." unique_id=1834385041]
+unique_name_in_owner = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1066314153]
 sprite_frames = SubResource("SpriteFrames_hvgxb")
 animation = &"fly"
