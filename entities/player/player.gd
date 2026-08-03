@@ -1,8 +1,6 @@
 @icon("res://entities/player/art/player-2.png")
 class_name Player
 extends Area2D
-# Maybe you could shoot in only one direction
-# Shoot very fast
 
 const SPEED: float = 1.2
 const TILT_SPEED: float = 0.15
@@ -14,6 +12,7 @@ var seed_scene: PackedScene = preload("res://entities/projectiles/seed/seed.tscn
 
 @onready var seed_container: Node2D = %SeedContainer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var auto_fire_cooldown: Timer = %AutoFireCooldown
 
 
 func _physics_process(_delta: float) -> void:
@@ -24,8 +23,8 @@ func _physics_process(_delta: float) -> void:
 	position += velocity
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("shoot") and auto_fire_cooldown.is_stopped():
 		_shoot()
 
 
@@ -42,3 +41,4 @@ func _animate_tilt() -> void:
 func _shoot() -> void:
 	print("Player shot.")
 	seed_container.add_child(seed_scene.instantiate())
+	auto_fire_cooldown.start()

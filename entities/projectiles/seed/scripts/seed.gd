@@ -1,7 +1,6 @@
 @icon("res://entities/projectiles/seed/art/seed.png")
 class_name SeedProjectile
 extends Area2D
-# Add auto-fire?
 
 const SPEED: float = 4
 
@@ -19,4 +18,6 @@ func _physics_process(_delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		print("Enemy hit.")
+		# TODO Replace with animations
 		area.queue_free()
+		queue_free()
