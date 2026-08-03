@@ -59,5 +59,4 @@ shape = SubResource("RectangleShape2D_vkc3x")
 position = Vector2(2, 0)
 rect = Rect2(-9, -3.5, 16, 7)
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
