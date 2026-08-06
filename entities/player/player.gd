@@ -1,5 +1,5 @@
 @icon("res://entities/player/art/player-2.png")
-class_name Player
+class_name PlayerCharacter
 extends Area2D
 
 const SPEED: float = 1.2

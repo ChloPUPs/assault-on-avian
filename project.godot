@@ -31,6 +31,7 @@ folder_colors={
 "res://entities/": "green",
 "res://entities/player/": "pink",
 "res://entities/projectiles/": "orange",
+"res://prefabs/": "yellow",
 "res://stages/": "red"
 }
 

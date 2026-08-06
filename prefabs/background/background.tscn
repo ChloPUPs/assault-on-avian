@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpqtxn61uyrgf"]
+
+[ext_resource type="Texture2D" uid="uid://ca2o5dcxfiuud" path="res://prefabs/background/assets/amazing_background.png" id="1_naicp"]
+
+[node name="Background" type="CanvasLayer" unique_id=1564742210]
+layer = -10
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1178114592]
+texture = ExtResource("1_naicp")
+centered = false
